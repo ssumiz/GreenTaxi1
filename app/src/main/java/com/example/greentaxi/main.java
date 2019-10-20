@@ -140,7 +140,7 @@ public class main extends AppCompatActivity {
 
                     LinearLayout tmap = findViewById(R.id.notification_tmap);
 
-                    tmapView.setSKTMapApiKey("fb390902-e9ca-4aed-bf74-66f14d37841e");
+                    tmapView.setSKTMapApiKey("02fdbf87-3e14-4378-9d59-2c03e50e77d0");
                     tmap.addView(tmapView);
 
 
