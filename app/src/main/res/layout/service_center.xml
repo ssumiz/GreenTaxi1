@@ -56,7 +56,7 @@
             app:scale_height="700"
             app:scale_width="1080"
             app:scale_top="300"
-            app:srcCompat="@drawable/logo"
+            app:srcCompat="@drawable/taxi"
             tools:ignore="MissingPrefix"
             />
 
