@@ -2,6 +2,7 @@ package com.example.greentaxi.mlkitbarcodescan.BarcodeScanner;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,6 +18,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.greentaxi.R;
+import com.example.greentaxi.autoLogin;
+import com.example.greentaxi.currentUserInfo;
+import com.example.greentaxi.main_logined;
 import com.example.greentaxi.mlkitbarcodescan.BarCodeScannerUtil.BarcodeScanningProcessor;
 import com.example.greentaxi.mlkitbarcodescan.BarCodeScannerUtil.OverlayView;
 import com.example.greentaxi.mlkitbarcodescan.BarCodeScannerUtil.common.CameraSource;
@@ -25,8 +29,11 @@ import com.example.greentaxi.mlkitbarcodescan.BarCodeScannerUtil.common.FrameMet
 import com.example.greentaxi.mlkitbarcodescan.BarCodeScannerUtil.common.GraphicOverlay;
 import com.example.greentaxi.mlkitbarcodescan.LocalData.ContactDetail;
 import com.example.greentaxi.mlkitbarcodescan.LocalData.DBHandler;
+import com.example.greentaxi.signUp;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcode;
 import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcodeDetector;
@@ -207,6 +214,7 @@ public class BarcodeScannerActivity extends AppCompatActivity {
         bundle.putBoolean(KEY_CAMERA_PERMISSION_GRANTED, false);
         msg.setData(bundle);
         mHandler.sendMessage(msg);
+
     };
 
     public BarcodeScanningProcessor.BarcodeResultListener getBarcodeResultListener() {
@@ -218,10 +226,20 @@ public class BarcodeScannerActivity extends AppCompatActivity {
 
                 for (FirebaseVisionBarcode barCode : barcodes)
                 {
+                    int i=1;
+                    Log.d(TAG, "onSuccess1: " + barCode.getRawValue());
+                    Log.d(TAG, "onSuccess2: " + barCode.getFormat());
+                    Log.d(TAG, "onSuccess3: " + barCode.getValueType());
 
-                    Log.d(TAG, "onSuccess: " + barCode.getRawValue());
-                    Log.d(TAG, "onSuccess: " + barCode.getFormat());
-                    Log.d(TAG, "onSuccess: " + barCode.getValueType());
+                    boolean a = true;
+                    if(a== true) {
+                        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                        final DatabaseReference databaseReference2 = firebaseDatabase.getReference("message").child(currentUserInfo.getId());
+                        databaseReference2.child(barCode.getRawValue()).setValue(barCode.getRawValue());
+                        a = false;
+                    }
+
+
 
                     FirebaseVisionBarcode.ContactInfo contactInfo = barCode.getContactInfo();
 
@@ -295,5 +313,19 @@ public class BarcodeScannerActivity extends AppCompatActivity {
         }
         toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
         toast.show();
+
+        new Thread(() -> {
+            try {
+                FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                final DatabaseReference databaseReference2 = firebaseDatabase.getReference("message").child(currentUserInfo.getId());
+                databaseReference2.child("message").setValue(message);
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
+        }).start();
+
+
     }
 }

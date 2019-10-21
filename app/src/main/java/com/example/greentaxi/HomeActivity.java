@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,7 +17,15 @@ import com.example.greentaxi.mlkitbarcodescan.LocalData.ContactDetail;
 import com.example.greentaxi.mlkitbarcodescan.LocalData.DBHandler;
 import com.example.greentaxi.mlkitbarcodescan.Util.AlertDialog.AlertDialogHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -30,6 +42,12 @@ public class HomeActivity extends AppCompatActivity {
     ArrayList<ContactDetail> contactDetailArrayList;
     LinearLayoutManager layoutManager;
 
+    private DatabaseReference databaseReference;
+
+
+    private ListView listView;
+    private ArrayAdapter<String> adapter;
+    List<Object> Array = new ArrayList<>();
 
     AlertDialogHelper alertDialogHelper;
 
@@ -41,6 +59,33 @@ public class HomeActivity extends AppCompatActivity {
         dbHandler = new DBHandler(this);
         alertDialogHelper=new AlertDialogHelper(this);
         listSetup();
+        listView = findViewById(R.id.message_list);
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, new ArrayList<String>());
+        listView.setAdapter(adapter);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("message").child(autoLogin.getUserName(HomeActivity.this));
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                adapter.clear();
+
+                for (DataSnapshot data : dataSnapshot.getChildren()){
+
+                    String msg = data.getValue().toString();
+                    Array.add(msg);
+                    adapter.add(msg);
+                }
+                adapter.notifyDataSetChanged();
+                listView.setSelection(adapter.getCount()-1);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
     }
 
