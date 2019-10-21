@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:hint="아이디"
+            android:text="YJP"
             android:textSize="25dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -66,69 +66,8 @@
             app:scale_left="50"
             tools:ignore="MissingPrefix"/>
 
-        <TextView
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="비밀번호"
-            android:textSize="25dp"
-            android:layout_marginLeft="20dp"
-            app:scale_height="100"
-            app:scale_textsize="75"
-            app:scale_width="950"
-            app:scale_top="500"
-            app:scale_left="50"
-            tools:ignore="MissingPrefix" />
 
-        <EditText
-            android:padding="10dp"
-            android:background="@drawable/nomal_edge"
-            android:id="@+id/editPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="비밀번호"
-            android:textSize="25dp"
-            app:scale_height="150"
-            app:scale_textsize="75"
-            app:scale_width="950"
-            app:scale_top="600"
-            app:scale_left="50"
-            tools:ignore="MissingPrefix"/>
 
-        <TextView
-            android:id="@+id/passwordCheck"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="비밀번호 확인"
-            android:textSize="25dp"
-            android:layout_marginLeft="20dp"
-            app:scale_height="100"
-            app:scale_textsize="75"
-            app:scale_width="950"
-            app:scale_top="750"
-            app:scale_left="50"
-            tools:ignore="MissingPrefix"/>
-
-        <EditText
-            android:padding="10dp"
-            android:background="@drawable/nomal_edge"
-            android:id="@+id/editPassword2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="비밀번호"
-            android:textSize="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            app:scale_height="150"
-            app:scale_textsize="75"
-            app:scale_width="950"
-            app:scale_top="850"
-            app:scale_left="50"
-            tools:ignore="MissingPrefix"/>
 
         <TextView
             android:id="@+id/name"
@@ -140,7 +79,7 @@
             app:scale_height="100"
             app:scale_textsize="75"
             app:scale_width="950"
-            app:scale_top="1000"
+            app:scale_top="520"
             app:scale_left="50"
             tools:ignore="MissingPrefix"/>
 
@@ -152,12 +91,12 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="이름"
+            android:text="박정환"
             android:textSize="25dp"
             app:scale_height="150"
             app:scale_textsize="75"
             app:scale_width="950"
-            app:scale_top="1100"
+            app:scale_top="620"
             app:scale_left="50"
             tools:ignore="MissingPrefix"/>
 
@@ -165,15 +104,15 @@
             android:id="@+id/phoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="전화번호"
             android:textSize="25dp"
-            android:layout_marginLeft="20dp"
             app:scale_height="100"
-            app:scale_textsize="75"
-            app:scale_width="950"
-            app:scale_top="1250"
             app:scale_left="50"
-            tools:ignore="MissingPrefix"/>
+            app:scale_textsize="75"
+            app:scale_top="790"
+            app:scale_width="950"
+            tools:ignore="MissingPrefix" />
 
         <EditText
             android:padding="10dp"
@@ -183,11 +122,11 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone"
-            android:hint="010-0000-0000"
+            android:text="010-5145-8424"
             app:scale_height="150"
             app:scale_textsize="75"
             app:scale_width="950"
-            app:scale_top="1350"
+            app:scale_top="890"
             app:scale_left="50"
             tools:ignore="MissingPrefix"/>
         <TextView
@@ -200,7 +139,7 @@
             app:scale_height="100"
             app:scale_textsize="75"
             app:scale_width="950"
-            app:scale_top="1500"
+            app:scale_top="1040"
             app:scale_left="50"
             tools:ignore="MissingPrefix"/>
 
@@ -212,11 +151,11 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textWebEmailAddress"
-            android:hint="E-mail"
+            android:text="wjdghks123@naver.com"
             app:scale_height="150"
             app:scale_textsize="75"
             app:scale_width="950"
-            app:scale_top="1600"
+            app:scale_top="1150"
             app:scale_left="50"
             tools:ignore="MissingPrefix"/>
 

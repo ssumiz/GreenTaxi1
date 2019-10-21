@@ -62,7 +62,7 @@ public class partner extends AppCompatActivity {
                     String msg = data.getValue().toString();
                     Array.add(msg);
                     adapter.add(msg);
-                }
+            }
                 adapter.notifyDataSetChanged();
                 listView.setSelection(adapter.getCount()-1);
             }

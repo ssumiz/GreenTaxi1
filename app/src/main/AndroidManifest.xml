@@ -76,9 +76,6 @@
             android:name=".route_search"
             android:label="route_search" />
         <activity
-            android:name=".partner_register"
-            android:label="partner_register" />
-        <activity
             android:name=".main_logined"
             android:label="main_login" />
         <activity

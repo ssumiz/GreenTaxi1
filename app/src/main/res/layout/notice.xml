@@ -61,6 +61,8 @@
             tools:ignore="MissingPrefix" />
         //첫번째줄
 
+        //두번째 줄
+
         <TextView
 
             android:layout_width="340dp"
@@ -73,7 +75,6 @@
             app:scale_top="380"
             app:scale_width="880"
             tools:ignore="MissingPrefix" />
-        //두번째 줄
 
         <TextView
             android:id="@+id/notices"
@@ -82,10 +83,10 @@
             android:ems="2"
             android:gravity=""
             android:onClick="onClick"
-            android:text=" 공지사항                          15"
+            android:text=" 공지사항                              15"
             android:textColor="#000000"
             app:scale_height="150"
-            app:scale_left="105"
+            app:scale_left="120"
             app:scale_textsize="70"
             app:scale_top="310"
             app:scale_width="850"
@@ -113,15 +114,16 @@
             android:ems="10"
             android:gravity=""
             android:onClick="onClick"
-            android:text=" 업데이트                            2"
+            android:text=" 업데이트                                2"
             android:textColor="#000000"
             app:scale_height="150"
-            app:scale_left="105"
+            app:scale_left="120"
             app:scale_textsize="70"
             app:scale_top="470"
             app:scale_width="850"
 
             tools:ignore="MissingPrefix" />
+
 
         <TextView
             android:layout_width="340dp"
@@ -131,12 +133,11 @@
             android:text="조회수"
             android:textColor="#000000"
             app:scale_height="150"
-            app:scale_left="865"
+            app:scale_left="850"
             app:scale_textsize="50"
-            app:scale_top="150"
+            app:scale_top="180"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
-
 
         <ImageView
 

@@ -167,7 +167,7 @@
             android:layout_marginTop="10dp"
             android:onClick="onClick"
             app:scale_height="130"
-            app:scale_left="850"
+            app:scale_left="880"
             app:scale_top="1700"
             app:scale_width="130"
             app:srcCompat="@drawable/minus2"
@@ -175,8 +175,10 @@
 
         <ListView
             android:id="@+id/partner_list"
-            android:layout_width="1302dp"
+            android:layout_width="327dp"
             android:layout_height="wrap_content"
+
+            android:font="@font/hmk"
             app:scale_height="1300"
             app:scale_left="100"
             app:scale_textsize="40"

@@ -23,7 +23,7 @@
         android:layout_marginTop="50dp"
         android:layout_alignParentTop="true"
         android:layout_weight="1"
-        app:srcCompat="@drawable/logo"
+        app:srcCompat="@drawable/taxi"
         app:scale_height="500"
         app:scale_textsize="125"
         app:scale_width="1080"

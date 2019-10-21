@@ -21,19 +21,20 @@
 
         <ImageView
 
-            android:background="#FFFF"
             android:id="@+id/main_logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_gravity="top"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="120dp"
             android:layout_weight="1"
-            app:scale_height="700"
-            app:scale_width="1080"
-            app:srcCompat="@drawable/logo"
-            tools:ignore="MissingPrefix"
-            />
+            android:background="#FFFF"
+            app:scale_height="550"
+            app:scale_left="110"
+            app:scale_top="130"
+            app:scale_width="900"
+            app:srcCompat="@drawable/taxi"
+            tools:ignore="MissingPrefix" />
 
         <ImageButton
             android:id="@+id/main_settingButton"
@@ -54,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick= "onClick"
-            app:srcCompat="@drawable/settings"
+            app:srcCompat="@drawable/qrcode"
             android:background="#00000000"
             android:scaleType="fitCenter"
             app:scale_textsize="50"
@@ -69,11 +70,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ems="10"
-           android:background="@drawable/nomal_edge"
+            android:background="@drawable/nomal_edge"
             android:hint="  장소, 버스, 주소 검색"
             android:gravity="center_vertical"
             app:scale_textsize="70"
-            app:scale_top="600"
+            app:scale_top="650"
             app:scale_height="150"
             app:scale_width="900"
             app:scale_left = "100"
